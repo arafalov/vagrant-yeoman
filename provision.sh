@@ -6,6 +6,9 @@ apt-get update
 echo "Installing git"
 apt-get install -y git
 
+echo "Installing curl"
+apt-get install -y curl
+
 echo "Installing node and npm"
 #Instructions as per https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager (Vagrant runs in root/sudo mode already)
 apt-get install -y python-software-properties python g++ make
@@ -16,6 +19,10 @@ apt-get update
 apt-get install -y nodejs
 # nodejs above includes npm --- apt-get install -y npm
 
+echo "Install grunt dependencies"
+npm install -g coffee-script
+npm install -g grunt-cli
+
 echo "Installing Yeoman and generators"
 npm install -g yo
 npm install -g generator-webapp
@@ -23,5 +30,6 @@ npm install -g generator-angular
 
 echo "Installing compass support"
 gem update --system
-gem install compass
-npm install grunt-contrib-compass --save-dev
+gem install compass --no-ri --no-rdoc
+
+
